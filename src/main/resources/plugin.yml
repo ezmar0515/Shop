@@ -1,0 +1,8 @@
+name: Shop
+version: '1.0-SNAPSHOT'
+main: Shop.ShopMain
+api-version: '1.21'
+depend: [FancyNpcs]
+commands:
+  코인지급:
+    description: 테스트용 코인을 지급합니다.
