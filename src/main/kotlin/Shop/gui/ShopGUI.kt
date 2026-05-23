@@ -97,7 +97,7 @@ class ShopGUI(
             return
         }
 
-        // 2. [추가된 로직] 개인 상점인데 상점에 잔액이 부족한 경우 체크
+        // 2. 개인 상점인데 상점에 잔액이 부족한 경우 체크
         val sellPrice = ((shopItem.price * shopItem.sellRate) / 100).toInt() // 판매가
 
         if (!config.isAdminShop && config.storedMoney < sellPrice) {
@@ -115,7 +115,7 @@ class ShopGUI(
             // 유저에게 돈 지급
             currencyManager.giveMoney(player, sellPrice)
 
-            // 4. [추가된 로직] 개인 상점일 경우 상점 데이터 업데이트
+            // 4. 개인 상점일 경우 상점 데이터 업데이트
             if (!config.isAdminShop) {
                 config.storedMoney -= sellPrice // 상점 금고에서 돈 차감
                 shopItem.stock += 1            // 팔린 아이템은 상점 재고로 추가
